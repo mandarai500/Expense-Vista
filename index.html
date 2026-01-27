@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Creative Expense Tracker</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(120deg, #667eea, #764ba2);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container {
+    background: #1e1e2f;
+    width: 900px;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    animation: fadeIn 1s ease;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+h1 {
+    text-align: center;
+}
+.top {
+    display: flex;
+    gap: 20px;
+}
+.form, .calendar {
+    flex: 1;
+}
+input, button {
+    width: 100%;
+    padding: 8px;
+    margin: 6px 0;
+    border-radius: 5px;
+    border: none;
+}
+button {
+    background: #4caf50;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover {
+    background: #45a049;
+}
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+.day {
+    background: #2a2a40;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.day:hover {
+    background: #3f3f6b;
+}
+.day.hasExpense {
+    background: #ff9800;
+}
+canvas {
+    background: #111;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.total {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 18px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>💸 Expense Tracker</h1>
+
+    <div class="top">
+        <div class="form">
+            <h3>Add Expense</h3>
+            <input id="title" placeholder="Expense title">
+            <input id="amount" type="number" placeholder="Amount">
+            <input id="date" type="date">
+            <button id="addBtn">Add Expense</button>
+            <div class="total">Total: ₹<span id="total">0</span></div>
+        </div>
+
+        <div class="calendar">
+            <h3 id="monthTitle"></h3>
+            <div class="calendar-grid" id="calendar"></div>
+        </div>
+    </div>
+
+    <canvas id="chart" width="850" height="250"></canvas>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
