@@ -92,5 +92,6 @@ This project is open-source and available under the **MIT License**.
 
 ---
 
-⭐ If you find this project useful, don’t forget to star the repository! Thanks--
+⭐ If you find this project useful, don’t forget to star the repository! Thanks---
+
 
